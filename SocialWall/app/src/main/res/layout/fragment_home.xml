@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                            android:layout_height="match_parent"/>
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentBottom="true">
+
+            <EditText android:id="@+id/text_message"
+                      android:layout_width="480dp"
+                      android:layout_height="48dp"
+                      android:layout_toStartOf="@+id/send_message_button"/>
+
+            <Button android:id="@+id/send_message_button"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/icon_send"
+                    android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+</RelativeLayout>
