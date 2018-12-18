@@ -1,0 +1,3 @@
+C:\Users\marcp\AndroidStudioProjects\TwitchCompanion\app\src\main\java\com\perea\marc\twitchcompanion\MainActivity.kt
+C:\Users\marcp\AndroidStudioProjects\TwitchCompanion\app\src\main\java\com\perea\marc\twitchcompanion\Model\TWStream.kt
+C:\Users\marcp\AndroidStudioProjects\TwitchCompanion\app\src\main\java\com\perea\marc\twitchcompanion\network\APIService.kt
