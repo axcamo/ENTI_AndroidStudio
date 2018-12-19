@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/home" android:title="@string/tab_home" android:icon="@drawable/icon_home"></item>
-    <item android:id="@+id/news" android:title="@string/tab_news" android:icon="@drawable/icon_news"></item>
-    <item android:id="@+id/profile" android:title="@string/tab_profile" android:icon="@drawable/icon_profile"></item>
+    <item android:id="@+id/tab_home" android:title="@string/tab_home" android:icon="@drawable/icon_home"></item>
+    <item android:id="@+id/tab_news" android:title="@string/tab_news" android:icon="@drawable/icon_news"></item>
+    <item android:id="@+id/tab_profile" android:title="@string/tab_profile" android:icon="@drawable/icon_profile"></item>
 </menu>
