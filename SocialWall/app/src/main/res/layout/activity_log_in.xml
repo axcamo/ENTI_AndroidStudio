@@ -7,4 +7,65 @@
         android:layout_height="match_parent"
         tools:context=".LogInActivity">
 
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginTop="@dimen/margin_from_top"
+                  android:layout_gravity="center"
+                  android:orientation="vertical">
+
+        <!-- Email -->
+        <TextView android:id="@+id/logInEmailTitle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:textSize="16sp"
+                  android:textStyle="bold"
+                  android:text="@string/email"/>
+
+        <EditText android:id="@+id/logInpEmail"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:hint="@string/enter_email"/>
+
+        <!-- Password -->
+        <TextView android:id="@+id/logInPasswordTitle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="@dimen/margin_from_title"
+                  android:textSize="16sp"
+                  android:textStyle="bold"
+                  android:text="@string/password"/>
+
+        <EditText android:id="@+id/logInPassword"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:hint="@string/write_password"/>
+
+        <!-- Enter -->
+        <Button android:id="@+id/logInEnterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_from_title"
+                android:layout_gravity="center"
+                android:text="@string/log_in"/>
+
+        <TextView android:id="@+id/signUpMessage"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:text="@string/go_to_signup"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>

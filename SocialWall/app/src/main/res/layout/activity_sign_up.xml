@@ -10,6 +10,7 @@
 
 <LinearLayout android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:layout_marginTop="@dimen/margin_from_top"
               android:layout_gravity="center"
               android:orientation="vertical">
 
@@ -18,7 +19,6 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
-              android:layout_marginTop="@dimen/margin"
               android:textSize="16sp"
               android:textStyle="bold"
               android:text="@string/username"/>
@@ -34,7 +34,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
-              android:layout_marginTop="@dimen/margin"
+              android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
               android:text="@string/email"/>
@@ -50,7 +50,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
-              android:layout_marginTop="@dimen/margin"
+              android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
               android:text="@string/password"/>
@@ -61,9 +61,11 @@
               android:layout_gravity="center"
               android:hint="@string/select_password"/>
 
-    <Button android:id="@+id/signUpButton"
+    <!-- Submit -->
+    <Button android:id="@+id/signUpSubmitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_from_title"
             android:layout_gravity="center"
             android:text="@string/submit"/>
 

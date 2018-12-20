@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin">16dp</dimen>
+    <dimen name="margin_from_title">16dp</dimen>
+    <dimen name="margin_from_top">80dp</dimen>
 
 </resources>
