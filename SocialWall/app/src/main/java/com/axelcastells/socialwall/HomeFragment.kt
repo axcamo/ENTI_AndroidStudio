@@ -1,6 +1,7 @@
 package com.axelcastells.socialwall
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -11,12 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class HomeFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +24,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         // TODO: Your code goes here
+        //refreshData()
         SendMessageButton.setOnClickListener {
             val userText = TextCapsule.text.toString()
+            if (userText.isEmpty()) return@setOnClickListener
+
+            //if user == null -> Sign Up
+            if (FirebaseAuth.getInstance().currentuser == null){
+                val goToSignUpIntent = Intent(activity, SignUpActivity::class.java)
+                startActivity(goToSignUpIntent)
+                return@setOnClickListener
+            }
             Log.i("HomeFragment", "Text Message: "+userText)
             SendMessage(userText)
         }
@@ -38,6 +44,7 @@ class HomeFragment : Fragment() {
         GetMessages()
     }
 
+    //send message to database
     fun SendMessage(msg:String?){
         val db = FirebaseFirestore.getInstance()
         val userMessage = MessageModel(msg, Date())
@@ -48,6 +55,7 @@ class HomeFragment : Fragment() {
         }
     }
 
+    //get messages from database
     fun GetMessages(){
         val db = FirebaseFirestore.getInstance()
         db.collection("messages").get().addOnCompleteListener{task ->
