@@ -1,7 +1,8 @@
-package com.axelcastells.socialwall
+package com.axelcastells.socialwall.Activities
 
 import android.app.Activity
 import android.os.Bundle
+import com.axelcastells.socialwall.R
 
 class LogInActivity : Activity() {
 

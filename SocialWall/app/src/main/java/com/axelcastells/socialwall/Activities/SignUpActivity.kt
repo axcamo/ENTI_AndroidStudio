@@ -1,12 +1,13 @@
-package com.axelcastells.socialwall
+package com.axelcastells.socialwall.Activities
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.axelcastells.socialwall.R
+import com.axelcastells.socialwall.Models.UserModel
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -29,7 +30,8 @@ class SignUpActivity : Activity() {
                     if(task.isSuccessful){
                         Log.d("SignUpActivity", "createUserWithEmail:success")
                         val user = auth.currentUser
-                        val userModel = UserModel(user?.uid, user?.displayName, user?.email)
+                        val userModel =
+                            UserModel(user?.uid, user?.displayName, user?.email)
 
                         val db = FirebaseFirestore.getInstance()
                         db.collection("users").document(user!!.uid).set(userModel)
