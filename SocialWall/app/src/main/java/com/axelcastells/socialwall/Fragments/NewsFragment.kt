@@ -1,20 +1,12 @@
-package com.axelcastells.socialwall
+package com.axelcastells.socialwall.Fragments
 
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.firebase.firestore.FirebaseFirestore
-import android.support.annotation.NonNull
-import android.support.v7.widget.RecyclerView
-import android.widget.AdapterView
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.firebase.firestore.DocumentReference
-import com.google.android.gms.tasks.OnSuccessListener
+import com.axelcastells.socialwall.R
 
 class NewsFragment : Fragment() {
 
