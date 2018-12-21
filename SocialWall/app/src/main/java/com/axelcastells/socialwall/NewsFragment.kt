@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.firestore.FirebaseFirestore
 import android.support.annotation.NonNull
+import android.support.v7.widget.RecyclerView
+import android.widget.AdapterView
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.DocumentReference
 import com.google.android.gms.tasks.OnSuccessListener
@@ -28,3 +30,4 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 }
+

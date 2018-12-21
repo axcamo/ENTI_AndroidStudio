@@ -4,6 +4,7 @@ package com.axelcastells.socialwall
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
 
@@ -60,10 +62,16 @@ class HomeFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
         db.collection("messages").get().addOnCompleteListener{task ->
             if(task.isSuccessful){
+                var list = ArrayList<MessageModel>()
+
                 task.result?.forEach{documentSnapshot->
                     val message = documentSnapshot.toObject(MessageModel::class.java)
+                    list.add(message)
                     Log.i("HomeFragment", "Got message from FireStore: "+message)
                 }
+                var adapter = NewsAdapter(list)
+                messageslist.adapter = adapter
+                messageslist.layoutManager = LinearLayoutManager(context)
             }
         }
     }

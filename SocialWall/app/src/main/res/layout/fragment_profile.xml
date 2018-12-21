@@ -23,7 +23,7 @@
               android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
-              android:text="lasa"/>
+              android:text="@string/username"/>
 
     <!-- Email -->
     <TextView android:id="@+id/profileEmail"
@@ -33,7 +33,7 @@
               android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
-              android:text="dasda"/>
+              android:text="@string/email"/>
 
     <!-- Log Out -->
     <Button android:id="@+id/profileLogOut"
