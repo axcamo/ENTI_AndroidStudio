@@ -11,7 +11,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                android:orientation="vertical"
-               android:layout_marginTop="@dimen/margin"
+               android:layout_marginTop="@dimen/margin_from_top"
                android:src="@drawable/icon_profile"/>
 
     <!-- Username -->
@@ -20,7 +20,7 @@
               android:layout_height="wrap_content"
               android:layout_width="wrap_content"
               android:layout_gravity="center"
-              android:layout_marginTop="@dimen/margin"
+              android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
               android:text="lasa"/>
@@ -30,7 +30,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center"
-              android:layout_marginTop="@dimen/margin"
+              android:layout_marginTop="@dimen/margin_from_title"
               android:textSize="16sp"
               android:textStyle="bold"
               android:text="dasda"/>
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_from_title"
             android:text="@string/log_out"/>
 
 </LinearLayout>
