@@ -5,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import kotlinx.android.synthetic.main.row_messsage.view.*
+import kotlinx.android.synthetic.main.row_message.view.*
 
-class NewsAdapter(var newsList: ArrayList<MessageModel>) : RecyclerView.Adapter<NewsAdapter.MessageNewsViewHolder>() {
+class NewsAdapter(var newsList: ArrayList<NewsModel>) : RecyclerView.Adapter<NewsAdapter.MessageNewsViewHolder>() {
 
     override fun getItemCount(): Int {
         return newsList.count()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageNewsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_messsage, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_notification, parent, false)
         return MessageNewsViewHolder(view)
     }
 

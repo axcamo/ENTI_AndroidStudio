@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
                     list.add(message)
                     Log.i("HomeFragment", "Got message from FireStore: "+message)
                 }
-                var adapter = NewsAdapter(list)
+                var adapter = HomeAdapter(list)
                 messageslist.adapter = adapter
                 messageslist.layoutManager = LinearLayoutManager(context)
             }
