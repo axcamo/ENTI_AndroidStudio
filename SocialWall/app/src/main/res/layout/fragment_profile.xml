@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ProfileFragment"
+             android:orientation="vertical">
+
+    <ImageView android:id="@+id/profileImage"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:orientation="vertical"
+               android:layout_marginTop="@dimen/margin_from_top"
+               android:src="@drawable/icon_profile"/>
+
+    <!-- Username -->
+    <TextView
+              android:id="@+id/profileUsername"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+              android:layout_gravity="center"
+              android:layout_marginTop="@dimen/margin_from_title"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:text="@string/username"/>
+
+    <!-- Email -->
+    <TextView android:id="@+id/profileEmail"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_marginTop="@dimen/margin_from_title"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:text="@string/email"/>
+
+    <!-- Log Out -->
+    <Button android:id="@+id/profileLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_from_title"
+            android:text="@string/log_out"/>
+
+</LinearLayout>

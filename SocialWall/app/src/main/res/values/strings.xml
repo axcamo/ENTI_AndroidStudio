@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SocialWall</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_news">News</string>
+    <string name="tab_profile">Profile</string>
+
+    // Sign up and Log in layouts
+    <string name="username">Username</string>
+    <string name="choose_username">Choose your username</string>
+    <string name="email">Email</string>
+    <string name="write_email">Write your email</string>
+    <string name="password">Password</string>
+    <string name="select_password">Select your password</string>
+    <string name="submit">SUBMIT</string>
+    <string name="go_to_login"><i>Already have an account? <u>Login here</u></i></string>
+    <string name="log_in">Log In</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="write_password">Write your password</string>
+    <string name="go_to_signup"><i>Don\'t have an account? <u>Create yours here</u></i></string>
+
+
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="log_out">Log Out</string>
+
+
+
+
+</resources>
