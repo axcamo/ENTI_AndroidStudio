@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
@@ -33,23 +34,24 @@ class HomeFragment : Fragment() {
             val userText = TextCapsule.text.toString()
             if (userText.isEmpty()) return@setOnClickListener
 
+
             //if user == null -> Sign Up
-            if (FirebaseAuth.getInstance().currentuser == null){
+            if (FirebaseAuth.getInstance().currentUser == null){
                 val goToSignUpIntent = Intent(activity, SignUpActivity::class.java)
                 startActivity(goToSignUpIntent)
                 return@setOnClickListener
             }
             Log.i("HomeFragment", "Text Message: "+userText)
-            SendMessage(userText)
+            SendMessage(FirebaseAuth.getInstance().currentUser?.displayName, userText)
         }
 
         GetMessages()
     }
 
     //send message to database
-    fun SendMessage(msg:String?){
+    fun SendMessage(user:String?, msg:String?){
         val db = FirebaseFirestore.getInstance()
-        val userMessage = MessageModel(msg, Date())
+        val userMessage = MessageModel(user, msg, Date())
         db.collection("messages").add(userMessage).addOnSuccessListener {
             GetMessages()
         }.addOnFailureListener{

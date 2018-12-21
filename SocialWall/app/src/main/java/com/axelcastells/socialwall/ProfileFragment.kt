@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.axelcastells.socialwall.R.string.username
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -27,7 +28,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+/*
         // Check if logged in or out
         FirebaseAuth.getInstance().currentUser?.let {
             // We have user
@@ -70,6 +71,7 @@ class ProfileFragment : Fragment() {
                 return@setOnClickListener
             }
         }
+        */
     }
 }
 
