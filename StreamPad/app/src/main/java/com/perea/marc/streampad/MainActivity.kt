@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        search_list.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        //search_list.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         getApiData()
     }
@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
                     response.body()?.data?.let { streams ->
                         for (stream in streams) {
                             Log.i("MainActivity", streams.toString())
-                            Log.i("MainActivity", streams.streamURL)
-                            Log.i("MainActivity", streams.getStreamThumbnail())
+                            Log.i("MainActivity", stream.streamURL)
+                            Log.i("MainActivity", stream.getStreamThumbnail())
 
                             // Get Game
                             stream.gameId?.let {
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        var streams = ApiService.service.getStreams().data
+        var streams = ApiService.service.getStreams()
 
     }
 
