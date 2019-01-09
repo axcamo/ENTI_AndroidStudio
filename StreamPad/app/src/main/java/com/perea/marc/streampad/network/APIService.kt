@@ -21,6 +21,8 @@ interface ApiService {
     @GET("games")
     fun getGames(@Query("id") gameId: String): Call<Any>
 
+
+
     companion object {
         private var retrofit = Retrofit.Builder()
             .baseUrl("https://api.twitch.tv/helix/")
