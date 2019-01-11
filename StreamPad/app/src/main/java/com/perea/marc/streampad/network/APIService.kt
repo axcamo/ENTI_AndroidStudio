@@ -1,6 +1,7 @@
 package com.perea.marc.streampad.network
 
 
+import com.perea.marc.streampad.model.TWGameResponse
 import com.perea.marc.streampad.model.TWStreamResponse
 import com.perea.marc.streampad.model.TWStream
 import retrofit2.Call
@@ -14,12 +15,12 @@ interface ApiService {
 
     @Headers("Client-ID: ywvglt0gib8rqdly0ejobehqfi071m")
     @GET("streams")
-    fun getStreams(): Call<TWStreamResponse>
+    fun getStreams(@Query("game_id") gameId: String): Call<TWStreamResponse>
 
 
     @Headers("Client-ID: ywvglt0gib8rqdly0ejobehqfi071m")
     @GET("games")
-    fun getGames(@Query("id") gameId: String): Call<Any>
+    fun getGames(@Query("name") gameName: String): Call<TWGameResponse>
 
 
 
