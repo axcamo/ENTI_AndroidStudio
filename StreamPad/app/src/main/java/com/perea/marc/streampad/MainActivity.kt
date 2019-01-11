@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
 
     fun getApiData() {
 
-        var newGameId: String? = null
         // Get Games
         ApiService.service.getGames("Twitch Plays").enqueue(object : Callback<TWGameResponse> {
             override fun onFailure(call: Call<TWGameResponse>, t: Throwable) {
@@ -52,54 +51,57 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.isSuccessful) {
                     response.body()?.data?.let { games ->
+                        var newGameId: String? = null
                         for (game in games) {
                             Log.i("Twitch", games.toString())
-                            newGameId = game.id
+                            newGameId = game.id!!
                             Log.i("Twitch", newGameId)
                         }
+
+                        //Get Streams
+                        ApiService.service.getStreams(newGameId!!).enqueue(object : Callback<TWStreamResponse> {
+                            override fun onFailure(call: Call<TWStreamResponse>, t: Throwable) {
+                                // No response from server
+                                // TODO: Handle error
+                                t.printStackTrace()
+                            }
+
+                            override fun onResponse(call: Call<TWStreamResponse>, response: Response<TWStreamResponse>) {
+                                // We got response from server
+                                if (response.isSuccessful) {
+                                    response.body()?.data?.let { streams ->
+                                        for (stream in streams) {
+                                            Log.i("Twitch", stream.toString())
+
+                                            // Get Game
+                                            /*
+                                            stream.gameId?.let {
+                                                ApiService.service.getGames(it).enqueue(object : Callback<TWGameResponse> {
+                                                    override fun onFailure(call: Call<Any>, t: Throwable) {
+                                                        t.printStackTrace()
+                                                    }
+
+                                                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                                                        Log.i("MainActivity", response.body()?.toString() ?: "")
+                                                    }
+                                                })
+                                            }
+                                            */
+                                        }
+                                    } ?: Log.e("MainActivity", "Error getting streams")
+                                } else {
+                                    // TODO: Handle error
+                                }
+                            }
+
+                        })
+
                     }
                 }
             }
         })
 
-        //Get Streams
 
-        ApiService.service.getStreams(newGameId!!).enqueue(object : Callback<TWStreamResponse> {
-            override fun onFailure(call: Call<TWStreamResponse>, t: Throwable) {
-                // No response from server
-                // TODO: Handle error
-                t.printStackTrace()
-            }
-
-            override fun onResponse(call: Call<TWStreamResponse>, response: Response<TWStreamResponse>) {
-                // We got response from server
-                if (response.isSuccessful) {
-                    response.body()?.data?.let { streams ->
-                        for (stream in streams) {
-                            Log.i("Twitch", streams.toString())
-
-                            // Get Game
-                            /*
-                            stream.gameId?.let {
-                                ApiService.service.getGames(it).enqueue(object : Callback<TWGameResponse> {
-                                    override fun onFailure(call: Call<Any>, t: Throwable) {
-                                        t.printStackTrace()
-                                    }
-
-                                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                                        Log.i("MainActivity", response.body()?.toString() ?: "")
-                                    }
-                                })
-                            }
-                            */
-                        }
-                    } ?: Log.e("MainActivity", "Error getting streams")
-                } else {
-                    // TODO: Handle error
-                }
-            }
-
-        })
 
     }
 
