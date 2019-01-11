@@ -1,6 +1,7 @@
 package com.perea.marc.streampad
 
 import android.app.Activity
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,6 @@ import kotlinx.android.synthetic.main.stream_row_layout.view.*
 
 class StreamsAdapter(var streamsList: ArrayList<TWStream>) : RecyclerView.Adapter<StreamsAdapter.StreamViewHolder>() {
 
-    var onStreamClickListener: OnStreamClickListener<TWStream>? = null
 
     override fun getItemCount(): Int {
         return streamsList.count()
@@ -38,7 +38,12 @@ class StreamsAdapter(var streamsList: ArrayList<TWStream>) : RecyclerView.Adapte
 
         // PlayButton Event
         viewHolder.playButton.setOnClickListener {
-            onStreamClickListener?.onItemClick(streamsList[position], position)
+            val stream = streamsList[position]
+
+
+            val intent = Intent(it.context, ChannelActivity::class.java)
+            intent.putExtra("gameId", stream.gameId)
+            it.context.startActivity(intent)
         }
     }
     class StreamViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -4,5 +4,8 @@
     <dimen name="altura_nom_stream">48dp</dimen>
     <dimen name="altura_nom_canal">48dp</dimen>
     <dimen name="search_bar_altura">48dp</dimen>
+    <dimen name="channel_text">5dp</dimen>
+    <dimen name="stream_text">5dp</dimen>
+    <dimen name="views_text">5dp</dimen>
 
 </resources>

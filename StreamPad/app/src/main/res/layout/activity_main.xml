@@ -9,8 +9,6 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:queryHint="Search here">
-
-        <requestFocus/>
     </SearchView>
 
     <android.support.v7.widget.RecyclerView

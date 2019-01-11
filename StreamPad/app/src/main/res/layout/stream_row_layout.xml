@@ -11,7 +11,7 @@
               android:layout_width="match_parent"
               android:layout_height="40dp"
               android:layout_toEndOf="@+id/channel_thumbnail"
-              android:layout_toStartOf="@+id/play_button"/>
+              android:layout_toStartOf="@+id/play_button" android:textSize="10sp"/>
 
     <EditText android:id="@+id/channel_name"
               android:layout_width="match_parent"
@@ -19,13 +19,14 @@
               android:layout_toEndOf="@+id/channel_thumbnail"
               android:layout_toStartOf="@+id/play_button"
               android:layout_below="@+id/stream_name"
+              android:textSize="8sp"
               android:layout_marginEnd="70dp"/>
 
     <EditText android:id="@+id/viewers_count"
               android:layout_width="50dp"
               android:layout_height="wrap_content"
               android:layout_below="@+id/stream_name"
-              android:layout_toStartOf="@+id/play_button"/>
+              android:layout_toStartOf="@+id/play_button" android:textSize="8sp"/>
 
     <ImageView android:id="@+id/viewers_icon"
                android:layout_width="20dp"

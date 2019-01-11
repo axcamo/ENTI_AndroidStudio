@@ -9,6 +9,7 @@ class ChannelActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val gameId = intent.getStringExtra("gameId")
 
     }
 }
