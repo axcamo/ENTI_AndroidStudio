@@ -4,10 +4,5 @@
     <dimen name="altura_nom_stream">48dp</dimen>
     <dimen name="altura_nom_canal">48dp</dimen>
     <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
-    <dimen name="search_bar_altura">48dp</dimen>
+
 </resources>

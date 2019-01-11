@@ -1,5 +1,6 @@
 package com.perea.marc.streampad
 
+import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 
 import android.support.v4.app.Fragment
@@ -8,6 +9,8 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
@@ -27,9 +30,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnStreamClickListener<TWStream> {
 
-
+    var streamsList : ArrayList<TWStream>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         //search_list.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         getApiData()
+    }
+
+    override fun onItemClick(item: TWStream, position: Int) {
+
     }
 
     fun getApiData() {
@@ -53,9 +60,9 @@ class MainActivity : AppCompatActivity() {
                     response.body()?.data?.let { games ->
                         var newGameId: String? = null
                         for (game in games) {
-                            Log.i("Twitch", games.toString())
+                            //Log.i("Twitch", games.toString())
                             newGameId = game.id!!
-                            Log.i("Twitch", newGameId)
+                            //Log.i("Twitch", newGameId)
                         }
 
                         //Get Streams
@@ -70,10 +77,23 @@ class MainActivity : AppCompatActivity() {
                                 // We got response from server
                                 if (response.isSuccessful) {
                                     response.body()?.data?.let { streams ->
+                                        streamsList = ArrayList()
                                         for (stream in streams) {
                                             Log.i("Twitch", stream.toString())
                                             // TODO: Add all streams to recycler view
-                                            
+                                            streamsList?.add(stream)
+                                        }
+                                        Log.i("Twitch",streamsList?.count().toString())
+                                        streamsList?.let {
+
+
+
+                                            var adapter = StreamsAdapter(it)
+                                            //adapter.onStreamClickListener = this
+
+                                            streams_list.adapter = adapter
+                                            streams_list.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
+
                                         }
                                     } ?: Log.e("MainActivity", "Error getting streams")
                                 } else {

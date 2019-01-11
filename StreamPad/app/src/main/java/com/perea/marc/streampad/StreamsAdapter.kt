@@ -13,11 +13,12 @@ import com.bumptech.glide.Glide
 import com.perea.marc.streampad.model.TWStream
 import com.perea.marc.streampad.model.TWStreamResponse
 import com.perea.marc.streampad.network.ApiService
+import kotlinx.android.synthetic.main.activity_channel.view.*
 import kotlinx.android.synthetic.main.stream_row_layout.view.*
 
 class StreamsAdapter(var streamsList: ArrayList<TWStream>) : RecyclerView.Adapter<StreamsAdapter.StreamViewHolder>() {
 
-    var onStreamClickListener: AdapterView.OnItemClickListener<TWStream>? = null
+    var onStreamClickListener: OnStreamClickListener<TWStream>? = null
 
     override fun getItemCount(): Int {
         return streamsList.count()
