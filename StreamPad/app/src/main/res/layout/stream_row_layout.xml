@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:id="@+id/layout_fuera"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="75dp"
               android:orientation="horizontal">
+<<<<<<< HEAD
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/channel_thumbnail"
             android:layout_width="0dp"
@@ -13,31 +15,59 @@
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:orientation="vertical">
+=======
+    <!--icona amb la imatge del canal-->
+    <ImageView android:id="@+id/channel_thumbnail"
+               android:layout_width="75dp"
+               android:layout_height="match_parent"
+               android:layout_alignParentStart="true"/>
+    <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="75dp">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="75dp">
+            <!--text amb el nom del directe-->
+>>>>>>> dbd5c3014dc3e8f31495862a4207aaa8354c6a7b
             <EditText android:id="@+id/stream_name"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"/>
-            <LinearLayout android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:orientation="horizontal">
+                      android:layout_width="match_parent"
+                      android:layout_height="40dp"
+                      android:layout_marginStart="0dp"/>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="40dp">
+                <!--text amb el nom del canal-->
                 <EditText android:id="@+id/channel_name"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"/>
-                <LinearLayout android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:orientation="horizontal">
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:layout_marginEnd="80dp"/>
+                <RelativeLayout android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_alignParentEnd="true">
                     <!--icono ojo viewers-->
-                    <ImageView android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"/>ç
+                    <ImageView android:id="@+id/icon_eye"
+                               android:layout_width="30dp"
+                               android:layout_height="match_parent"
+                               android:layout_alignParentStart="true"/>
+                    <!--text amb el número de viewers del directe-->
                     <EditText android:id="@+id/viewers_count"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+                              android:layout_width="50dp"
+                              android:layout_height="match_parent"
+                              android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!--botó del play-->
         <Button android:id="@+id/play_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
 
-</LinearLayout>
+</RelativeLayout>
