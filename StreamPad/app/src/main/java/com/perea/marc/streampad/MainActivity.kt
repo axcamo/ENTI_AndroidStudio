@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.internal.Streams
+import com.perea.marc.streampad.model.TWGameResponse
 import com.perea.marc.streampad.model.TWStreamResponse
 import com.perea.marc.streampad.network.ApiService
 import com.perea.marc.streampad.model.TWStream
@@ -39,55 +40,57 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getApiData() {
-        //Get Streams
-        ApiService.service.getStreams().enqueue(object : Callback<TWStreamResponse> {
-            override fun onFailure(call: Call<TWStreamResponse>, t: Throwable) {
-                // No response from server
-                // TODO: Handle error
-                t.printStackTrace()
+
+        // Get Games
+        ApiService.service.getGames("Twitch Plays").enqueue(object : Callback<TWGameResponse> {
+            override fun onFailure(call: Call<TWGameResponse>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onResponse(call: Call<TWStreamResponse>, response: Response<TWStreamResponse>) {
-                // We got response from server
-                if (response.isSuccessful){
-                    response.body()?.data?.let { streams ->
-                        for (stream in streams) {
-                            Log.i("MainActivity", streams.toString())
-                            Log.i("MainActivity", stream.streamURL)
-                            Log.i("MainActivity", stream.getStreamThumbnail())
+            override fun onResponse(call: Call<TWGameResponse>, response: Response<TWGameResponse>) {
 
-                            // Get Game
-                            stream.gameId?.let {
-                                ApiService.service.getGames(it).enqueue(object : Callback<Any> {
-                                    override fun onFailure(call: Call<Any>, t: Throwable) {
-                                        t.printStackTrace()
-                                    }
-
-                                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                                        Log.i("MainActivity", response.body()?.toString() ?: "")
-                                    }
-                                })
-                            }
+                if (response.isSuccessful) {
+                    response.body()?.data?.let { games ->
+                        var newGameId: String? = null
+                        for (game in games) {
+                            Log.i("Twitch", games.toString())
+                            newGameId = game.id!!
+                            Log.i("Twitch", newGameId)
                         }
-                    } ?: Log.e("MainActivity", "Error getting streams")
-                }
-                else {
-                    // TODO: Handle error
+
+                        //Get Streams
+                        ApiService.service.getStreams(newGameId!!).enqueue(object : Callback<TWStreamResponse> {
+                            override fun onFailure(call: Call<TWStreamResponse>, t: Throwable) {
+                                // No response from server
+                                // TODO: Handle error
+                                t.printStackTrace()
+                            }
+
+                            override fun onResponse(call: Call<TWStreamResponse>, response: Response<TWStreamResponse>) {
+                                // We got response from server
+                                if (response.isSuccessful) {
+                                    response.body()?.data?.let { streams ->
+                                        for (stream in streams) {
+                                            Log.i("Twitch", stream.toString())
+                                            // TODO: Add all streams to recycler view
+                                            
+                                        }
+                                    } ?: Log.e("MainActivity", "Error getting streams")
+                                } else {
+                                    // TODO: Handle error
+                                }
+                            }
+
+                        })
+
+                    }
                 }
             }
-
         })
-        var streams = ApiService.service.getStreams()
+
+
 
     }
-
-
-
-
-
-
-
-
 
 
 }
@@ -198,4 +201,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}/*
+}
+*/
