@@ -72,21 +72,8 @@ class MainActivity : AppCompatActivity() {
                                     response.body()?.data?.let { streams ->
                                         for (stream in streams) {
                                             Log.i("Twitch", stream.toString())
-
-                                            // Get Game
-                                            /*
-                                            stream.gameId?.let {
-                                                ApiService.service.getGames(it).enqueue(object : Callback<TWGameResponse> {
-                                                    override fun onFailure(call: Call<Any>, t: Throwable) {
-                                                        t.printStackTrace()
-                                                    }
-
-                                                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                                                        Log.i("MainActivity", response.body()?.toString() ?: "")
-                                                    }
-                                                })
-                                            }
-                                            */
+                                            // TODO: Add all streams to recycler view
+                                            
                                         }
                                     } ?: Log.e("MainActivity", "Error getting streams")
                                 } else {
