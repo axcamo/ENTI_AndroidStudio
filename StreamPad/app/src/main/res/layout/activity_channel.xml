@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <ImageView
+    <!-- User profile pic -->
+    <ImageView android:id="@+id/user_profile_pic"
+               android:layout_width="@dimen/profile_pic"
+               android:layout_height="@dimen/profile_pic"
+               android:orientation="vertical"
+               android:layout_gravity="center"
+               android:layout_marginTop="@dimen/margin_profile_pic_to_top"
+               android:src="@drawable/icon_user_profile_pic"/>
+
+    <!-- Channel username -->
+    <TextView
+            android:id="@+id/profile_username"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_between_section"
+            android:textSize="@dimen/channel_info_username"
+            android:textStyle="bold"
+            android:text="@string/username"/>
+
+    <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/profileImage"
-    />
-</android.support.constraint.ConstraintLayout>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_between_section">
+
+        <!-- Total views: text -->
+        <TextView android:id="@+id/total_views_text"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="@dimen/margin_title_end"
+                  android:textAlignment="textEnd"
+                  android:textSize="@dimen/channel_info_text"
+                  android:textStyle="bold"
+                  android:text="@string/total_views"/>
+
+        <!--  views number display -->
+        <TextView android:id="@+id/total_views_number"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/margin_numbers_start"
+                  android:textAlignment="textStart"
+                  android:textSize="@dimen/channel_info_numbers"
+                  android:text="@string/views_number"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_related_info">
+
+        <!-- followers: text -->
+        <TextView android:id="@+id/followers_text"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="@dimen/margin_title_end"
+                  android:textAlignment="textEnd"
+                  android:textSize="@dimen/channel_info_text"
+                  android:textStyle="bold"
+                  android:text="@string/followers"/>
+
+        <!-- followers number display -->
+        <TextView android:id="@+id/followers_number"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/margin_numbers_start"
+                  android:textAlignment="textStart"
+                  android:textSize="@dimen/channel_info_numbers"
+                  android:text="@string/followers_number"/>
+
+    </RelativeLayout>
+
+    <!-- Go to stream -->
+    <Button android:id="@+id/go_to_stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_between_section"
+            android:background="#FF6441A5"
+            android:textColor="#ffff"
+            android:text="@string/go_to_stream"/>
+
+</LinearLayout>

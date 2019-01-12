@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
-                android:layout_height="75dp">
+                android:layout_height="@dimen/main_screen_list_element">
 
     <ImageView android:id="@+id/channel_thumbnail"
-               android:layout_width="75dp"
+               android:layout_width="@dimen/main_screen_stream_image"
                android:layout_height="match_parent"/>
 
     <EditText android:id="@+id/stream_name"
               android:layout_width="match_parent"
-              android:layout_height="40dp"
+              android:layout_height="@dimen/main_screen_stream_name"
               android:layout_toEndOf="@+id/channel_thumbnail"
-              android:layout_toStartOf="@+id/play_button" android:textSize="10sp"/>
+              android:layout_toStartOf="@+id/play_button"
+              android:textSize="@dimen/main_screen_stream_name_text"/>
 
     <EditText android:id="@+id/channel_name"
               android:layout_width="match_parent"
@@ -19,24 +20,27 @@
               android:layout_toEndOf="@+id/channel_thumbnail"
               android:layout_toStartOf="@+id/play_button"
               android:layout_below="@+id/stream_name"
-              android:textSize="8sp"
-              android:layout_marginEnd="70dp"/>
+              android:textSize="@dimen/main_screen_username_text"
+              android:layout_marginEnd="@dimen/username_text_margin"/>
 
     <EditText android:id="@+id/viewers_count"
-              android:layout_width="50dp"
+              android:layout_width="@dimen/viewers_number_width"
               android:layout_height="wrap_content"
               android:layout_below="@+id/stream_name"
-              android:layout_toStartOf="@+id/play_button" android:textSize="8sp"/>
+              android:layout_toStartOf="@+id/play_button"
+              android:textSize="@dimen/main_screen_username_text"/>
 
     <ImageView android:id="@+id/viewers_icon"
-               android:layout_width="20dp"
+               android:layout_width="@dimen/eye_viewers"
                android:layout_height="match_parent"
                android:layout_below="@+id/stream_name"
-               android:layout_toStartOf="@+id/viewers_count"/>
+               android:layout_toStartOf="@+id/viewers_count"
+               android:src="@drawable/icon_viewers"/>
 
     <Button android:id="@+id/play_button"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_alignParentEnd="true"/>
+            android:layout_width="@dimen/main_screen_button"
+            android:layout_height="@dimen/main_screen_button"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/icon_right"/>
 
 </RelativeLayout>
