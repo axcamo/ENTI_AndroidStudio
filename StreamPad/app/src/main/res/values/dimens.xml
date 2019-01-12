@@ -8,9 +8,12 @@
     <dimen name="eye_viewers">20dp</dimen>
     <!-- text -->
     <dimen name="main_screen_stream_name_text">10sp</dimen>
-    <dimen name="main_screen_username_text">8sp</dimen>
+    <dimen name="main_screen_username_text">16sp</dimen>
+    <dimen name="main_screen_viewers_text">16sp</dimen>
     <!-- margins -->
     <dimen name="username_text_margin">70dp</dimen>
+    <dimen name="viewers_number_margin">10dp</dimen>
+    <dimen name="username_left_margin">10dp</dimen>
     <!-- width -->
     <dimen name="viewers_number_width">50dp</dimen>
     <!-- height -->

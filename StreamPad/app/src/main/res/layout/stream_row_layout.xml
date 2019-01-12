@@ -7,28 +7,34 @@
                android:layout_width="@dimen/main_screen_stream_image"
                android:layout_height="match_parent"/>
 
-    <EditText android:id="@+id/stream_name"
+    <TextView android:id="@+id/stream_name"
               android:layout_width="match_parent"
               android:layout_height="@dimen/main_screen_stream_name"
               android:layout_toEndOf="@+id/channel_thumbnail"
               android:layout_toStartOf="@+id/play_button"
               android:textSize="@dimen/main_screen_stream_name_text"/>
 
-    <EditText android:id="@+id/channel_name"
+    <TextView android:id="@+id/channel_name"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="match_parent"
               android:layout_toEndOf="@+id/channel_thumbnail"
               android:layout_toStartOf="@+id/play_button"
               android:layout_below="@+id/stream_name"
+              android:textStyle="bold"
               android:textSize="@dimen/main_screen_username_text"
+              android:gravity="center_vertical|start"
+              android:layout_marginStart="@dimen/username_left_margin"
               android:layout_marginEnd="@dimen/username_text_margin"/>
 
-    <EditText android:id="@+id/viewers_count"
+    <TextView android:id="@+id/viewers_count"
               android:layout_width="@dimen/viewers_number_width"
-              android:layout_height="wrap_content"
+              android:layout_height="match_parent"
               android:layout_below="@+id/stream_name"
               android:layout_toStartOf="@+id/play_button"
-              android:textSize="@dimen/main_screen_username_text"/>
+              android:textStyle="bold"
+              android:textSize="@dimen/main_screen_viewers_text"
+              android:gravity="center_vertical"
+              android:layout_marginStart="@dimen/viewers_number_margin"/>
 
     <ImageView android:id="@+id/viewers_icon"
                android:layout_width="@dimen/eye_viewers"
