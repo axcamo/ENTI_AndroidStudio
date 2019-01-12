@@ -42,7 +42,7 @@ class StreamsAdapter(var streamsList: ArrayList<TWStream>) : RecyclerView.Adapte
 
 
             val intent = Intent(it.context, ChannelActivity::class.java)
-            intent.putExtra("gameId", stream.gameId)
+            intent.putExtra("userId", stream.userId)
             it.context.startActivity(intent)
         }
     }
