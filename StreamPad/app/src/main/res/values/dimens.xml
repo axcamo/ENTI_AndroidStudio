@@ -31,8 +31,8 @@
     <dimen name="margin_profile_pic_to_top">30dp</dimen>
     <dimen name="margin_related_info">5dp</dimen>
     <dimen name="margin_between_section">15dp</dimen>
-    <dimen name="margin_numbers_start">200dp</dimen>
-    <dimen name="margin_title_end">200dp</dimen>
+    <dimen name="margin_numbers_start">220dp</dimen>
+    <dimen name="margin_title_end">220dp</dimen>
     <!-- text -->
     <dimen name="channel_info_text">20sp</dimen>
     <dimen name="channel_bio_text">15sp</dimen>
