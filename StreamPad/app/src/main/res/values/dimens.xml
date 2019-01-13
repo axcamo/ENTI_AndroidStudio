@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- STREAM CAPSULE -->
+    <!-- image -->
+    <dimen name="main_screen_stream_image_h">75dp</dimen>
+    <dimen name="main_screen_stream_image_w">75dp</dimen>
+    <dimen name="main_screen_button">75dp</dimen>
+    <dimen name="eye_viewers">20dp</dimen>
+    <!-- text -->
+    <dimen name="main_screen_stream_name_text">20sp</dimen>
+    <dimen name="main_screen_username_text">16sp</dimen>
+    <dimen name="main_screen_viewers_text">16sp</dimen>
+    <!-- margins -->
+    <dimen name="username_text_margin">70dp</dimen>
+    <dimen name="viewers_number_margin">10dp</dimen>
+    <dimen name="username_left_margin">10dp</dimen>
+    <!-- width -->
+    <dimen name="viewers_number_width">30dp</dimen>
+    <!-- height -->
+    <dimen name="main_screen_list_element">75dp</dimen>
+    <dimen name="main_screen_stream_name">40dp</dimen>
+
+
+    <!-- STREAM INFO SCREEN -->
+    <!-- image -->
+    <dimen name="profile_pic">100dp</dimen>
+    <!-- margins -->
+    <dimen name="margin_bio_left">15dp</dimen>
+    <dimen name="margin_bio_right">15dp</dimen>
+    <dimen name="margin_profile_pic_to_top">30dp</dimen>
+    <dimen name="margin_related_info">5dp</dimen>
+    <dimen name="margin_between_section">15dp</dimen>
+    <dimen name="margin_numbers_start">220dp</dimen>
+    <dimen name="margin_title_end">220dp</dimen>
+    <!-- text -->
+    <dimen name="channel_info_text">20sp</dimen>
+    <dimen name="channel_bio_text">15sp</dimen>
+    <dimen name="channel_info_numbers">20sp</dimen>
+    <dimen name="channel_info_username">30sp</dimen>
+
+
+    <!-- MAIN SCREEN -->
+    <!-- searchbar -->
+    <dimen name="search_bar_height">48dp</dimen>
+
+</resources>

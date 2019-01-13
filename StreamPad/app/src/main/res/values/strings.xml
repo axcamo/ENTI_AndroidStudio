@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StreamPad</string>
+    <string name="username">USERNAME</string>
+    <string name="bio">bio</string>
+    <string name="total_views">Total views:</string>
+    <string name="views_number">views number</string>
+    <string name="followers">Followers:</string>
+    <string name="followers_number">followers number</string>
+    <string name="go_to_stream">PLAY</string>
+</resources>

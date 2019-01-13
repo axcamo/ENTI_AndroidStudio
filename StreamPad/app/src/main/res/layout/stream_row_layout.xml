@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_screen_list_element">
+
+    <ImageView android:id="@+id/channel_thumbnail"
+               android:layout_width="@dimen/main_screen_stream_image_w"
+               android:layout_height="match_parent"/>
+
+    <TextView android:id="@+id/stream_name"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/main_screen_stream_name"
+              android:layout_toEndOf="@+id/channel_thumbnail"
+              android:layout_toStartOf="@+id/play_button"
+              android:textSize="@dimen/main_screen_stream_name_text"
+              android:layout_marginStart="@dimen/username_left_margin"
+              android:singleLine="true"
+              android:ellipsize="marquee"
+              android:marqueeRepeatLimit="marquee_forever"
+              android:scrollHorizontally="true"
+              android:focusable="true"
+              android:focusableInTouchMode="true"/>
+
+    <TextView android:id="@+id/channel_name"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_toEndOf="@+id/channel_thumbnail"
+              android:layout_toStartOf="@+id/play_button"
+              android:layout_below="@+id/stream_name"
+              android:textStyle="bold"
+              android:textSize="@dimen/main_screen_username_text"
+              android:gravity="center_vertical|start"
+              android:layout_marginStart="@dimen/username_left_margin"
+              android:layout_marginEnd="@dimen/username_text_margin"/>
+
+    <TextView android:id="@+id/viewers_count"
+              android:layout_width="@dimen/viewers_number_width"
+              android:layout_height="match_parent"
+              android:layout_below="@+id/stream_name"
+              android:layout_toStartOf="@+id/play_button"
+              android:textStyle="bold"
+              android:textSize="@dimen/main_screen_viewers_text"
+              android:gravity="center_vertical"
+              android:layout_marginStart="@dimen/viewers_number_margin"/>
+
+    <ImageView android:id="@+id/viewers_icon"
+               android:layout_width="@dimen/eye_viewers"
+               android:layout_height="match_parent"
+               android:layout_below="@+id/stream_name"
+               android:layout_toStartOf="@+id/viewers_count"
+               android:src="@drawable/icon_viewers"/>
+
+    <Button android:id="@+id/play_button"
+            android:layout_width="@dimen/main_screen_button"
+            android:layout_height="@dimen/main_screen_button"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/icon_right"/>
+
+</RelativeLayout>
