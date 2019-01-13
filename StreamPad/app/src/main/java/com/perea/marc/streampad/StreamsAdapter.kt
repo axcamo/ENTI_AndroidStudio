@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.stream_row_layout.view.*
 
 class StreamsAdapter(var streamsList: ArrayList<TWStream>) : RecyclerView.Adapter<StreamsAdapter.StreamViewHolder>() {
 
-
     override fun getItemCount(): Int {
         return streamsList.count()
     }
