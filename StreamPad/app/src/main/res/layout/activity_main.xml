@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+<!--
     <SearchView android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/search_bar_height"
@@ -10,12 +10,11 @@
                 android:layout_alignParentTop="true"
                 android:queryHint="Search here">
     </SearchView>
-
+-->
     <android.support.v7.widget.RecyclerView
             android:id="@+id/streams_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/search_bar">
+            android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
 
