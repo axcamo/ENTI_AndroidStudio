@@ -24,6 +24,19 @@
             android:textStyle="bold"
             android:text="@string/username"/>
 
+    <!-- Channel description -->
+    <TextView
+            android:id="@+id/profile_bio"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_bio_left"
+            android:layout_marginEnd="@dimen/margin_bio_right"
+            android:layout_marginTop="@dimen/margin_related_info"
+            android:textSize="@dimen/channel_bio_text"
+            android:textAlignment="center"
+            android:text="@string/bio"/>
+
     <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,34 +62,6 @@
                   android:textAlignment="textStart"
                   android:textSize="@dimen/channel_info_numbers"
                   android:text="@string/views_number"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_related_info">
-
-        <!-- followers: text -->
-        <TextView android:id="@+id/followers_text"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginEnd="@dimen/margin_title_end"
-                  android:textAlignment="textEnd"
-                  android:textSize="@dimen/channel_info_text"
-                  android:textStyle="bold"
-                  android:text="@string/followers"/>
-
-        <!-- followers number display -->
-        <TextView android:id="@+id/followers_number"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginStart="@dimen/margin_numbers_start"
-                  android:textAlignment="textStart"
-                  android:textSize="@dimen/channel_info_numbers"
-                  android:text="@string/followers_number"/>
 
     </RelativeLayout>
 

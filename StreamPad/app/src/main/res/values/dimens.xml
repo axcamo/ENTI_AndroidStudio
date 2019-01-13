@@ -24,15 +24,18 @@
 
     <!-- STREAM INFO SCREEN -->
     <!-- image -->
-    <dimen name="profile_pic">150dp</dimen>
+    <dimen name="profile_pic">100dp</dimen>
     <!-- margins -->
-    <dimen name="margin_profile_pic_to_top">40dp</dimen>
-    <dimen name="margin_related_info">15dp</dimen>
-    <dimen name="margin_between_section">30dp</dimen>
+    <dimen name="margin_bio_left">15dp</dimen>
+    <dimen name="margin_bio_right">15dp</dimen>
+    <dimen name="margin_profile_pic_to_top">30dp</dimen>
+    <dimen name="margin_related_info">5dp</dimen>
+    <dimen name="margin_between_section">15dp</dimen>
     <dimen name="margin_numbers_start">200dp</dimen>
     <dimen name="margin_title_end">200dp</dimen>
     <!-- text -->
     <dimen name="channel_info_text">20sp</dimen>
+    <dimen name="channel_bio_text">15sp</dimen>
     <dimen name="channel_info_numbers">20sp</dimen>
     <dimen name="channel_info_username">30sp</dimen>
 
