@@ -4,7 +4,7 @@
                 android:layout_height="@dimen/main_screen_list_element">
 
     <ImageView android:id="@+id/channel_thumbnail"
-               android:layout_width="@dimen/main_screen_stream_image"
+               android:layout_width="@dimen/main_screen_stream_image_w"
                android:layout_height="match_parent"/>
 
     <TextView android:id="@+id/stream_name"
@@ -12,7 +12,14 @@
               android:layout_height="@dimen/main_screen_stream_name"
               android:layout_toEndOf="@+id/channel_thumbnail"
               android:layout_toStartOf="@+id/play_button"
-              android:textSize="@dimen/main_screen_stream_name_text"/>
+              android:textSize="@dimen/main_screen_stream_name_text"
+              android:layout_marginStart="@dimen/username_left_margin"
+              android:singleLine="true"
+              android:ellipsize="marquee"
+              android:marqueeRepeatLimit="marquee_forever"
+              android:scrollHorizontally="true"
+              android:focusable="true"
+              android:focusableInTouchMode="true"/>
 
     <TextView android:id="@+id/channel_name"
               android:layout_width="match_parent"
